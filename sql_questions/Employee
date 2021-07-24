@@ -1,0 +1,15 @@
+select a.department_id, c.department_name, a.employee_id,a.first_name,a.last_name, b.salary,b.difference
+from employees a
+inner join (select department_id, max(salary)- min(salary) as difference, max(salary) as salary
+from (
+    select department_id, salary, rank() over w rank
+    from employees
+    window w as (partition by department_id order by salary desc)
+    ) s
+where rank < 3
+group by department_id) b
+on a.salary = b.salary and a.department_id = b.department_id
+inner join departments c
+on a.department_id = c.department_id
+
+

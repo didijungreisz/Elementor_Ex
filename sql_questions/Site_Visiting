@@ -1,0 +1,9 @@
+select a.site, a.promotion_code , sum(CAST(number_of_visitors AS double))/c.total*100 as precentage
+from promotions a
+left join site_visitors b on
+a.site == b.site
+and b.date <= a.end_date
+and b.date >= a.start_date
+left join (select site, sum(number_of_visitors) as total from site_visitors group by site) c
+on c.site = a.site
+group by a.site, promotion_code

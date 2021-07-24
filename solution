@@ -1,0 +1,5 @@
+I used sqllite as a db and flask framework for the api points, to make it as much easy as possible to install and use.
+(for more complex use cases I'll probably use mongoDB. it is the preferable choice here.)
+I created 2 api points to get all the url list data and to ask for one single url data.
+
+In AWS I'll implement it with container and use use AWS db

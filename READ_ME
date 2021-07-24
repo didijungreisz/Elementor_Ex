@@ -1,0 +1,11 @@
+instructions to run the program:
+1.install latest python
+2. run on cmd -> pip install flask
+3. run on cmd -> pip install requests
+4. get into the project folder in cmd (for example: cd C:\Users\User\Elementor_Ex)
+5. run on cmd -> flask run
+6. copy the 'running on' url  (for example http://127.0.0.1:5000/) to your browser or yous 'postman' to send requests
+7. you can use 2 api points:
+    a. use '/scan_sites_from_csv/' to scan all the urls from the csv provided file (http://127.0.0.1:5000/scan_sites_from_csv)
+    b. use 'scan_single_site' to send one url to scan (http://127.0.0.1:5000/scan_single_site/<url>)**
+** I didnt implement error catch so if you will enter invalid url you'll get general internal server error
